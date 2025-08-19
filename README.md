@@ -38,8 +38,13 @@ chmod +x setup.sh
 ## 📝 Example Output :
 
 [+] Starting Hydra Recon...
+
 [+] Subdomains found: 152
+
 [+] Live hosts detected: 47
+
 [+] Screenshots saved in results/screenshots/
+
 [+] Vulnerability scan completed: 5 potential issues
+
 [✔] Recon finished successfully!
