@@ -17,7 +17,6 @@ echo "[*] Starting HydraRecon on $DOMAIN..."
 # Subdomain Enumeration
 subfinder -d "$DOMAIN" -all -silent -t 50 -o "$OUTPUT/subdomains/subfinder.txt"
 assetfinder --subs-only "$DOMAIN" | sort -u > "$OUTPUT/subdomains/assetfinder.txt"
-amass enum -d "$DOMAIN" -passive -o "$OUTPUT/subdomains/amass.txt"
 
 cat "$OUTPUT"/subdomains/*.txt | sort -u > "$OUTPUT/subdomains/all.txt"
 
