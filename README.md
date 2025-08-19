@@ -26,7 +26,7 @@ cd hydra-recon-2
 
 ## ⚙️ Run setup to install dependencies :
 ```bash
-chmod +x setup.sh
+chmod +x setup.sh hydra-recon.sh
 ./setup.sh
 ```
 
