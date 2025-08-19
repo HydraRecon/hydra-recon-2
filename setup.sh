@@ -39,7 +39,6 @@ install_go_tool httpx github.com/projectdiscovery/httpx/cmd/httpx
 install_go_tool gowitness github.com/sensepost/gowitness@latest
 install_go_tool gauplus github.com/bp0lr/gauplus
 install_go_tool waybackurls github.com/tomnomnom/waybackurls
-install_go_tool uro github.com/s0md3v/uro@latest
 install_go_tool katana github.com/projectdiscovery/katana/cmd/katana
 install_go_tool nuclei github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 
