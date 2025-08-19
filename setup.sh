@@ -42,6 +42,9 @@ install_go_tool waybackurls github.com/tomnomnom/waybackurls
 install_go_tool katana github.com/projectdiscovery/katana/cmd/katana
 install_go_tool nuclei github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 
+#install uro
+pip3 install uro --break-system-packages
+
 # Install gf
 if ! command -v gf &> /dev/null; then
     echo "[*] Installing gf..."
