@@ -5,7 +5,7 @@ It combines the **top recon tools** into one script to save time and maximize re
 
 ---
 
-## 🚀 Features
+## 🚀 Features :
 - Subdomain Enumeration (`subfinder`, `assetfinder`, `amass`)
 - Live Host Detection (`httpx`)
 - Screenshots of hosts (`gowitness`)
@@ -16,9 +16,30 @@ It combines the **top recon tools** into one script to save time and maximize re
 
 ---
 
-## 📦 Installation
+## 📦 Installation :
 
 Clone the repo:
 ```bash
 git clone https://github.com/HydraRecon/hydra-recon-2.git
 cd hydra-recon-2
+```
+
+## ⚙️ Run setup to install dependencies :
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+## 🛠️ Usage :
+```bash
+./hydra-recon.sh target.com
+```
+
+## 📝 Example Output :
+
+[+] Starting Hydra Recon...
+[+] Subdomains found: 152
+[+] Live hosts detected: 47
+[+] Screenshots saved in results/screenshots/
+[+] Vulnerability scan completed: 5 potential issues
+[✔] Recon finished successfully!
