@@ -21,7 +21,6 @@ fi
 echo "[*] Installing Go-based tools..."
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install -v github.com/tomnomnom/assetfinder@latest
-go install -v github.com/owasp-amass/amass/v3/...@master
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 go install -v github.com/bp0lr/gauplus@latest
