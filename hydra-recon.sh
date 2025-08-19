@@ -32,7 +32,7 @@ cat "$OUTPUT"/subdomains/*.txt | sort -u > "$OUTPUT/subdomains/all.txt"
 httpx -l "$OUTPUT/subdomains/all.txt" -silent -threads 50 -o "$OUTPUT/subdomains/live.txt"
 
 # Screenshots
-gowitness scan file -f "$OUTPUT/subdomains/live.txt" -P "$OUTPUT/screenshots/"
+gowitness scan file -f "$OUTPUT/subdomains/live.txt" --screenshot-path "$OUTPUT/screenshots/"
 
 # URL Gathering
 gauplus --random-agent -t 30 "$DOMAIN" > "$OUTPUT/urls/gauplus.txt"
