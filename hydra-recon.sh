@@ -44,11 +44,21 @@ cat "$OUTPUT"/urls/*.txt | uro > "$OUTPUT/urls/all.txt"
 # Parameter Extraction
 grep "=" "$OUTPUT/urls/all.txt" | sort -u > "$OUTPUT/params/all_params.txt"
 
-# GF Patterns
-gf sqli < "$OUTPUT/params/all_params.txt" > "$OUTPUT/params/sqli.txt"
-gf xss < "$OUTPUT/params/all_params.txt" > "$OUTPUT/params/xss.txt"
-gf lfi < "$OUTPUT/params/all_params.txt" > "$OUTPUT/params/lfi.txt"
-gf redirect < "$OUTPUT/params/all_params.txt" > "$OUTPUT/params/redirect.txt"
+# Parameter Extraction
+grep "=" "$OUTPUT/urls/all.txt" | sort -u > "$OUTPUT/params/all_params.txt"
+
+# Grep-based Filtering for Vulnerable Params
+# SQLi - look for parameters like id=, user=, uid= etc.
+grep -E "id=|user=|uid=|pid=|cat=|select=|query=" "$OUTPUT/params/all_params.txt" > "$OUTPUT/params/sqli.txt"
+
+# XSS - look for common input parameters like q=, search=, s=, page=
+grep -E "q=|search=|s=|page=|keyword=|query=" "$OUTPUT/params/all_params.txt" > "$OUTPUT/params/xss.txt"
+
+# LFI - look for parameters related to files/paths
+grep -E "file=|path=|dir=|folder=|pg=|page=|document=" "$OUTPUT/params/all_params.txt" > "$OUTPUT/params/lfi.txt"
+
+# Open Redirect - look for redirect/load/next/url/return parameters
+grep -E "redirect=|url=|next=|return=|dest=|destination=|r=" "$OUTPUT/params/all_params.txt" > "$OUTPUT/params/redirect.txt"
 
 # Vulnerability Scanning with nuclei
 nuclei -l "$OUTPUT/subdomains/live.txt" -c 50 -silent -severity critical,high,medium -o "$OUTPUT/vulnscan/nuclei.txt"
